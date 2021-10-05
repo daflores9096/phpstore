@@ -36,14 +36,14 @@ class ProductsController {
         $producto = Producto::buscar($codigo);
 
         if ($_POST){
-
             $codigo = $_POST['codigo'];
             $producto = $_POST['producto'];
             $pcompra = $_POST['pcompra'];
             $pventa = $_POST['pventa'];
 
             Producto::editar($codigo, $producto, $pcompra, $pventa);
-            print_r($_POST);
+            //header('Location:?controller=products&action=editar&codigo='.$codigo);//quedarse en el form de editar
+            header('Location:?controller=products&action=lista');//redireccionar a la lista
         }
 
         include_once "views/products/editar.php";

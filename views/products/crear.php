@@ -26,6 +26,7 @@
             </div>
 
             <input type="submit" id="btnAgregar" name="btnAgregar" class="btn btn-success" value="Agregar Producto">
+            <a class="btn btn-danger" href="?controller=products&action=lista">Cancelar</a>
         </form>
     </div>
 

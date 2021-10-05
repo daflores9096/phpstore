@@ -50,8 +50,8 @@ class Producto {
 
     public static function editar($codigo, $producto, $pcompra, $pventa){
         $conexion = BD::crearInstancia();
-        $sql = $conexion->prepare("UPDATE productos SET codigo=?, producto=?, pcompra=?, pventa=? WHERE codigo=?");
-        $sql->execute(array($codigo, $producto, $pcompra, $pventa, $codigo));
+        $sql = $conexion->prepare("UPDATE productos SET producto=?, pcompra=?, pventa=? WHERE codigo=?");
+        $sql->execute(array($producto, $pcompra, $pventa, $codigo));
     }
 }
 
