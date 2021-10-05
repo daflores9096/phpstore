@@ -26,7 +26,7 @@
         <td><?php echo $row->pventa ?></td>
         <td>
             <div class="btn-group" role="group" aria-label>
-                <a href="?controller=products&action=editar&codigo=<?php echo $row->codigo; ?>" type="button" class="btn btn-warning">Editar</a> &nbsp; <a href="?controller=products&action=borrar&codigo=<?php echo $row->codigo; ?>" type="button" class="btn btn-danger">Borrar</a>
+                <a href="?controller=products&action=editar&codigo=<?php echo $row->codigo; ?>" type="button" class="btn btn-warning">Editar</a> &nbsp; <a href="javascript:void(0)" onclick="eliminarProducto(<?php echo $row->codigo ?>); return false;" type="button" class="btn btn-danger">Borrar</a>
             </div>
         </td>
     </tr>
@@ -36,3 +36,25 @@
     ?>
     </tbody>
 </table>
+
+<script>
+    function eliminarProducto(id){
+        swal("¿Está seguro que desea eliminar el producto?", {
+            buttons: {
+                cancel: "Cancelar",
+                aceptar: true,
+            },
+        })
+            .then((value) => {
+                switch (value) {
+
+                    case "aceptar":
+                        this.location.href = './?controller=products&action=borrar&codigo='+id;
+                        break;
+
+                    default:
+                        return false;
+                }
+            });
+    }
+</script>
