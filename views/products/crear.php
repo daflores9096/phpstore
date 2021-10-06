@@ -4,15 +4,15 @@
     </div>
     <div class="card-body">
 
-        <form action="" method="post">
+        <form action="" method="post" id="crearProd" name="crearProd">
             <div class="mb-3">
                 <label class="form-label" for="codigo">Código:</label>
-                <input class="form-control" type="text" id="codigo" name="codigo" placeholder="Ingrese el código">
+                <input class="form-control" type="text" id="codigo" name="codigo" required placeholder="Ingrese el código">
             </div>
 
             <div class="mb-3">
                 <label class="form-label" for="producto">Producto:</label>
-                <input class="form-control" type="text" id="producto" name="producto" placeholder="Ingrese el nombre del producto">
+                <input class="form-control" type="text" id="producto" name="producto" required placeholder="Ingrese el nombre del producto">
             </div>
 
             <div class="mb-3">
@@ -25,9 +25,24 @@
                 <input class="form-control" type="text" id="pventa" name="pventa" placeholder="Ingrese el precio de venta">
             </div>
 
-            <input type="submit" id="btnAgregar" name="btnAgregar" class="btn btn-success" value="Agregar Producto">
+            <input type="submit" id="btnAgregar" name="btnAgregar" class="btn btn-success" value="Guardar">
             <a class="btn btn-danger" href="?controller=products&action=lista">Cancelar</a>
         </form>
     </div>
 
 </div>
+
+<script>
+    $(document).ready(function() {
+        $("#crearProd").validate({
+                messages : {
+                    codigo: {
+                        required: "Ingrese el Código"
+                    },
+                    producto: {
+                        required: "Ingrese el nombre del Producto"
+                    }
+                }
+        });
+    });
+</script>

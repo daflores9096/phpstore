@@ -1,6 +1,6 @@
 <div class="card mt-5">
     <div class="card-header">
-        Agregar Producto
+        Editar Producto
     </div>
     <div class="card-body">
 
